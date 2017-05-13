@@ -1,4 +1,4 @@
-# Top100Movies
+# Top Movies
 - iOS Coding Challenge
 - Author: Mike Jones
 
