@@ -17,13 +17,6 @@ class MovieDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // insert background image
-        let bgImageView = UIImageView.init(frame: self.view.frame)
-        bgImageView.contentMode = .scaleToFill
-        bgImageView.image = UIImage(named: "grayBG")
-        self.view.insertSubview(bgImageView, at:0)
-        
         posterImageView?.image = posterImage
         descTextView.attributedText = movieRecord?.attributedMovieDescriptionString(compactVersion: false)
     }

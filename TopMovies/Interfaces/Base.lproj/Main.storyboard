@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7rI-yy-bHo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7rI-yy-bHo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -39,7 +39,7 @@
         <!--Top Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TopMoviesVC" customModule="ZocDoc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TopMoviesVC" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -61,7 +61,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCell" id="Ddb-WC-e1c" customClass="MovieCollectionViewCell" customModule="ZocDoc" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCell" id="Ddb-WC-e1c" customClass="MovieCollectionViewCell" customModule="TopMovies" customModuleProvider="target">
                                         <rect key="frame" x="11" y="10" width="353" height="294"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -215,7 +215,7 @@
         <!--Movie Details-->
         <scene sceneID="Qld-Qm-2dP">
             <objects>
-                <viewController storyboardIdentifier="movieDetailVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="is2-nf-N78" customClass="MovieDetailVC" customModule="ZocDoc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="movieDetailVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="is2-nf-N78" customClass="MovieDetailVC" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UGI-dH-pvX"/>
                         <viewControllerLayoutGuide type="bottom" id="RSD-rE-2MF"/>
@@ -230,6 +230,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDI-tI-knX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1020.5"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayBG" translatesAutoresizingMaskIntoConstraints="NO" id="ule-w7-st2">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1020.5"/>
+                                            </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moviePoster1" translatesAutoresizingMaskIntoConstraints="NO" id="nKJ-oT-aXT">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="562.5"/>
                                                 <constraints>
@@ -266,8 +269,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="ule-w7-st2" firstAttribute="leading" secondItem="YDI-tI-knX" secondAttribute="leading" id="0nq-df-Nm9"/>
                                             <constraint firstAttribute="bottom" secondItem="dYf-sS-1u9" secondAttribute="bottom" constant="120" id="1HY-nO-2dc"/>
                                             <constraint firstAttribute="trailing" secondItem="nKJ-oT-aXT" secondAttribute="trailing" id="2XN-qY-5SC"/>
+                                            <constraint firstItem="ule-w7-st2" firstAttribute="top" secondItem="YDI-tI-knX" secondAttribute="top" id="3Ma-oX-aVm"/>
+                                            <constraint firstAttribute="bottom" secondItem="ule-w7-st2" secondAttribute="bottom" id="CKF-d4-vFI"/>
                                             <constraint firstItem="dYf-sS-1u9" firstAttribute="width" secondItem="YDI-tI-knX" secondAttribute="width" multiplier="0.75" id="E55-Bd-864"/>
                                             <constraint firstItem="wdR-5R-CxA" firstAttribute="top" secondItem="Xdb-bG-7WX" secondAttribute="bottom" constant="5" id="Qxu-KI-bqS"/>
                                             <constraint firstItem="Xdb-bG-7WX" firstAttribute="top" secondItem="nKJ-oT-aXT" secondAttribute="bottom" constant="8" id="V8f-ef-Ovv"/>
@@ -277,6 +283,7 @@
                                             <constraint firstItem="nKJ-oT-aXT" firstAttribute="leading" secondItem="YDI-tI-knX" secondAttribute="leading" id="mZy-81-RP9"/>
                                             <constraint firstItem="nKJ-oT-aXT" firstAttribute="top" secondItem="YDI-tI-knX" secondAttribute="top" id="nNf-bC-g7j"/>
                                             <constraint firstItem="Xdb-bG-7WX" firstAttribute="leading" secondItem="YDI-tI-knX" secondAttribute="leading" id="pie-UM-t2N"/>
+                                            <constraint firstAttribute="trailing" secondItem="ule-w7-st2" secondAttribute="trailing" id="sJL-mn-vCi"/>
                                             <constraint firstItem="wdR-5R-CxA" firstAttribute="leading" secondItem="YDI-tI-knX" secondAttribute="leading" constant="3" id="w6Z-m2-s1J"/>
                                             <constraint firstItem="dYf-sS-1u9" firstAttribute="centerX" secondItem="YDI-tI-knX" secondAttribute="centerX" id="xtZ-Ld-Vm6"/>
                                         </constraints>
@@ -316,7 +323,7 @@
         <!--Purchase Tickets-->
         <scene sceneID="Bjw-dB-VgS">
             <objects>
-                <viewController storyboardIdentifier="webViewVC" title="Purchase Tickets" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oVg-PQ-bqY" customClass="WebViewVC" customModule="ZocDoc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewVC" title="Purchase Tickets" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oVg-PQ-bqY" customClass="WebViewVC" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SyN-3c-YxY"/>
                         <viewControllerLayoutGuide type="bottom" id="Azo-vT-lBQ"/>
